@@ -3,7 +3,7 @@ package com.hello.core.discount;
 import com.hello.core.member.Grade;
 import com.hello.core.member.Member;
 
-public class FixedDisCountPolicy implements DiscountPolicy {
+public class FixedDiscountPolicy implements DiscountPolicy {
 
     private int discountFixedAmount = 1000;
 

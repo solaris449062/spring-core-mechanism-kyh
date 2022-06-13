@@ -1,7 +1,6 @@
 package com.hello.core;
 
 import com.hello.core.discount.DiscountPolicy;
-import com.hello.core.discount.FixedDisCountPolicy;
 import com.hello.core.discount.RateDiscountPolicy;
 import com.hello.core.member.MemberRepository;
 import com.hello.core.member.MemberService;
@@ -27,7 +26,7 @@ public class AppConfig {
 
     @Bean
     public DiscountPolicy discountPolicy() {
-//        return new FixedDisCountPolicy();
+//        return new FixedDiscountPolicy();
         return new RateDiscountPolicy();
     }
 

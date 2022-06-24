@@ -19,12 +19,4 @@ public class SingletonService {
         System.out.println("Singleton object logic called");
     }
 
-    @Test
-    @DisplayName("Example of using an object with singleton pattern")
-    void singletonServiceTest() {
-
-        SingletonService singletonService1 = SingletonService.getInstance();
-        SingletonService singletonService2 = SingletonService.getInstance();
-        Assertions.assertThat(singletonService1).isSameAs(singletonService2);
-    }
 }

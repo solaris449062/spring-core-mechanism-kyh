@@ -16,11 +16,13 @@ public class AppConfig {
 
     @Bean
     public MemberService memberService() {
+        System.out.println("calling AppConfig.memberService");
         return new MemberServiceImpl(memoryRepository());
     }
 
     @Bean
     public MemberRepository memoryRepository() {
+        System.out.println("calling AppConfig.memoryRepository");
         return new MemoryMemberRepository();
     }
 
@@ -32,6 +34,7 @@ public class AppConfig {
 
     @Bean
     public OrderService orderService() {
+        System.out.println("calling AppConfig.orderService");
         return new OrderServiceImpl(memoryRepository(), discountPolicy());
     }
 }

@@ -8,12 +8,29 @@ group = 'com.hello'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
+// Lombok setting start
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+// Lombok setting end
+
 repositories {
 	mavenCentral()
 }
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
+
+	// Lombok library add start
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+
+	testCompileOnly 'org.projectlombok:lombok'
+	testAnnotationProcessor 'org.projectlombok:lombok'
+	// lombok library add end
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 

@@ -3,31 +3,20 @@ package com.hello.core.order;
 import com.hello.core.discount.DiscountPolicy;
 import com.hello.core.member.Member;
 import com.hello.core.member.MemberRepository;
-import com.hello.core.member.MemoryMemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class OrderServiceImpl implements OrderService {
 
-    @Autowired MemberRepository memberRepository;
-    @Autowired DiscountPolicy discountPolicy;
+    private MemberRepository memberRepository;
+    private DiscountPolicy discountPolicy;
 
-    public void setMemberRepository(MemberRepository memberRepository) {
+    @Autowired
+    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
-    }
-
-    public void setDiscountPolicy(DiscountPolicy discountPolicy) {
         this.discountPolicy = discountPolicy;
     }
-
-
-//   @Autowired
-//   public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
-//       System.out.println("1. OrderServiceImpl.OrderServiceImpl");
-//       this.memberRepository = memberRepository;
-//       this.discountPolicy = discountPolicy;
-//   }
 
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {
@@ -40,9 +29,4 @@ public class OrderServiceImpl implements OrderService {
     public MemberRepository getMemberRepository() {
         return memberRepository;
     }
-
-    public DiscountPolicy getDiscountPolicy() {
-       return discountPolicy;
-    }
-
 }

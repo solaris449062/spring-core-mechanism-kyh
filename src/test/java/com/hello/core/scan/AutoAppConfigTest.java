@@ -21,9 +21,6 @@ public class AutoAppConfigTest {
 
         OrderServiceImpl bean = ac.getBean(OrderServiceImpl.class);
         MemberRepository memberRepository = bean.getMemberRepository();
-        DiscountPolicy discountPolicy = bean.getDiscountPolicy();
         System.out.println("memberRepository = " + memberRepository);
-        System.out.println("discountPolicy = " + discountPolicy);
-
     }
 }

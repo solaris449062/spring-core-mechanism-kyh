@@ -23,6 +23,9 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
 
+	// added for JSR-330 - javax.inject.Provider
+	implementation 'javax.inject:javax.inject:1'
+
 	// Lombok library add start
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
